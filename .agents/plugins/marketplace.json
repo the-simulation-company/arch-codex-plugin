@@ -1,0 +1,20 @@
+{
+  "name": "arch-pr-authoring",
+  "interface": {
+    "displayName": "Arch Pr Authoring"
+  },
+  "plugins": [
+    {
+      "name": "arch-codex-plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/arch-codex-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
