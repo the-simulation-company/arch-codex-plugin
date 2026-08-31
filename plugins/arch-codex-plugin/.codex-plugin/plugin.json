@@ -1,20 +1,22 @@
 {
   "name": "arch-codex-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Writes PR descriptions with grounded product, navigation, and setup context.",
   "author": {
-    "name": "The Simulation Company",
-    "url": "https://thesimulationco.com"
+    "name": "Foothill Labs",
+    "url": "https://foothill.sh"
   },
+  "homepage": "https://foothill.sh",
   "repository": "https://github.com/the-simulation-company/arch-codex-plugin",
   "skills": "./skills/",
   "interface": {
     "displayName": "Arch PR Authoring",
     "shortDescription": "Draft PR descriptions with product context.",
     "longDescription": "Helps Codex ground pull request descriptions in the actual diff and include the product, navigation, and setup context Arch needs.",
-    "developerName": "The Simulation Company",
+    "developerName": "Foothill Labs",
     "category": "Productivity",
     "capabilities": ["Write"],
+    "websiteURL": "https://foothill.sh",
     "defaultPrompt": "Improve this pull request description with grounded product context."
   }
 }

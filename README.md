@@ -2,6 +2,8 @@
 
 A Codex plugin that helps authors write PR descriptions with enough grounded product context for Arch to turn the description into useful goals later.
 
+Published by [Foothill Labs](https://foothill.sh).
+
 The included skill can be selected automatically when Codex prepares, creates, or edits a PR description. It does not run QA, simulations, MCP tools, or any Arch workflow.
 
 ## Install from the repository marketplace
