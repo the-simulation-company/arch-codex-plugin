@@ -6,7 +6,7 @@ Built by [Foothill Labs](https://foothill.sh).
 
 The included skill can be selected automatically when Codex prepares, creates, or edits a PR description.
 
-## Install from the repository marketplace
+## Install
 
 ```bash
 codex plugin marketplace add the-simulation-company/arch-codex-plugin --ref main
