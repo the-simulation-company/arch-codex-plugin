@@ -18,9 +18,15 @@ Use these cases to verify the installed plugin. Compare whether the resulting PR
 
 **Evidence available:** The PR refactors a server-side cache adapter without changing responses, rendered UI, or externally observable behavior.
 
-**Expected outcome:** The description clearly says there is no browser-visible behavior change and does not fabricate pages, navigation, setup, or QA scenarios.
+**Expected outcome:** The description contains `@arch skip qa` on its own line, gives one concise reason that browser goal QA does not apply, and does not fabricate pages, navigation, setup, or QA scenarios.
 
-## 4. Existing template and human-authored content
+## 4. Backend change with a browser-visible consumer
+
+**Evidence available:** The PR changes the authorization response used by the browser's team-settings page. The intended UI is unchanged, but a regression could hide settings from organization administrators.
+
+**Expected outcome:** The description does not skip goal QA merely because the diff is backend-only. It identifies the administrator settings flow and the existing behavior worth rerunning without inventing a visible redesign.
+
+## 5. Existing template and human-authored content
 
 **Evidence available:** The repository template contains `## Summary`, `## Rollout`, and a checklist. The author has already written a rollout note and checked two items.
 

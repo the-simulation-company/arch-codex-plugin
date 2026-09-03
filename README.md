@@ -23,6 +23,7 @@ The `pr-qa-description` skill asks Codex to ground the PR description in the dif
 - affected pages and components;
 - how to reach the behavior;
 - required setup or state; and
-- evidenced behavioral variants.
+- evidenced behavioral variants; or
+- the exact `@arch skip qa` directive when the change has no supported browser-product consumer.
 
 Human-authored and template sections are preserved. The skill traces relevant repository evidence before asking the author for context that is genuinely unavailable.
