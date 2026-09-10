@@ -7,7 +7,21 @@ description: Use whenever Codex prepares, creates, or edits a GitHub pull reques
 
 Write or improve the pull request description using evidence from the actual diff, relevant tests, author-provided context, and the repository's PR template.
 
-Capture the useful product context:
+First decide whether Arch browser goal QA applies from the change's real production consumers. Do not decide from change size or from a frontend-versus-backend label alone.
+
+Goal QA applies when the change alters, or could regress, behavior that an end user or supported product operator can trigger and observe through a supported browser product surface. This includes backend behavior consumed by that surface, user actions and outcomes, permissions, state transitions, and user-visible errors or recovery. Existing goals may still be worth rerunning when intended behavior is unchanged but their production path changed.
+
+Goal QA does not apply when the change is limited to internal QA infrastructure, judge or worker orchestration, CI and deployment mechanics, developer tooling, documentation, tests, logging or observability, or backend behavior with no current supported product-surface consumer. Performance-only changes are also excluded from goal testing for now; describe their diagnostics or benchmarks under ordinary verification.
+
+When goal QA does not apply:
+
+- put `@arch skip qa` on its own line in the PR description;
+- give one concise reason in an existing testing section or a compact `QA decision` section; and
+- do not invent pages, navigation, user setup, goals, or E2E scenarios.
+
+Do not use the directive when a backend or infrastructure change has a current browser-visible consumer whose behavior could change.
+
+For qualifying behavior changes, capture the useful product context:
 
 - the user-visible change, preferably as before → after behavior;
 - the affected pages or UI components and where they appear;
@@ -19,7 +33,7 @@ Capture the useful product context:
 
 Treat these as information requirements and a preferred extraction block, not a required format for the whole PR description. Follow the repository's PR template, local authoring instructions, and any other applicable PR-writing skill. Preserve human-authored content and every existing section.
 
-Keep the required QA information together whenever the format permits, in this order:
+Keep the qualifying QA information together whenever the format permits, in this order:
 
 1. If the template already has a dedicated `QA`, `Testing`, `Test plan`, or equivalent section that can hold the information clearly, put it there.
 2. Otherwise add a compact `## QA context` section.
@@ -37,7 +51,7 @@ Use the following labels when they fit the available evidence and format. When r
 - E2E considerations:
 ```
 
-Omit irrelevant or empty labels. Exact UI copy, product rationale, test evidence, or a scope note such as "No browser-visible behavior" may be included when it materially clarifies the change. Keep E2E considerations at the behavior level: identify the flow, state transition, permission boundary, integration boundary, or failure path worth validating. Do not turn them into detailed test scripts or a complete set of test goals; downstream goal creation decides the exact new or revised goals against the existing goal inventory.
+Omit irrelevant or empty labels. Exact UI copy, product rationale, or test evidence may be included when it materially clarifies a qualifying behavior change. Keep E2E considerations at the user-observable behavior level: identify the flow, state transition, permission boundary, integration boundary, or failure path worth validating. Do not turn them into detailed test scripts or a complete set of test goals; downstream goal creation decides the exact new or revised goals against the existing goal inventory.
 
 ## Context for downstream goal creation
 
